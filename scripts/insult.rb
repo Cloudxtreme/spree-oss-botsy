@@ -1,3 +1,5 @@
+require 'open-uri'
+
 def insult(name)
   insult = Nokogiri.HTML(open('http://www.pangloss.com/seidel/Shaker/')).xpath("//font").first.content.strip.gsub('\n', ', ')
   "#{name}: #{insult}"
